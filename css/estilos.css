@@ -1,0 +1,129 @@
+/* line 13, C:/Users/Mauro/Documents/GitHub/Clima2/css/estilos.scss */
+html {
+  font-family: 'Sourse Sans Pro', sans-serif; }
+
+@media all and (max-width: 400px) {
+  /* line 17, C:/Users/Mauro/Documents/GitHub/Clima2/css/estilos.scss */
+  html {
+    font-size: 80%; }
+ }
+
+/* line 22, C:/Users/Mauro/Documents/GitHub/Clima2/css/estilos.scss */
+body {
+  padding: 0;
+  margin: 0; }
+
+/* line 26, C:/Users/Mauro/Documents/GitHub/Clima2/css/estilos.scss */
+.main-header {
+  text-align: center;
+  background-color: #D43A00;
+  color: white;
+  padding: 1.5em; }
+
+/* line 32, C:/Users/Mauro/Documents/GitHub/Clima2/css/estilos.scss */
+.main-header h1 {
+  margin: 0; }
+
+/* line 36, C:/Users/Mauro/Documents/GitHub/Clima2/css/estilos.scss */
+.main-header h2 {
+  font-size: 1rem;
+  font-weight: normal; }
+
+/* line 40, C:/Users/Mauro/Documents/GitHub/Clima2/css/estilos.scss */
+.card {
+  position: relative;
+  height: 35vh;
+  width: 100%;
+  width: 100vw;
+  background-size: cover;
+  color: white;
+  padding: 0.5em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  -webkit-justify-content: space-around;
+  -moz-justify-content: space-around;
+  justify-content: space-around;
+  margin-bottom: 0.2em;
+  background-color: orange; }
+
+@media all and (min-width: 300px) {
+  /* line 55, C:/Users/Mauro/Documents/GitHub/Clima2/css/estilos.scss */
+  .card {
+    background-position: center; }
+ }
+
+/* line 60, C:/Users/Mauro/Documents/GitHub/Clima2/css/estilos.scss */
+.card__header {
+  text-align: center;
+  font-family: "Raleway"; }
+
+/* line 64, C:/Users/Mauro/Documents/GitHub/Clima2/css/estilos.scss */
+.card__title {
+  font-size: 1.7em;
+  margin: 0; }
+
+/* line 68, C:/Users/Mauro/Documents/GitHub/Clima2/css/estilos.scss */
+.card__date {
+  font-size: 1.2em;
+  margin: 0; }
+
+/*.card--valencia {
+		background-image: url(img/v.jpg);
+	}
+	.card--bsas {
+		background-image: url(img/bsas.jpg);
+	}*/
+/* line 78, C:/Users/Mauro/Documents/GitHub/Clima2/css/estilos.scss */
+.card__info {
+  position: absolute;
+  bottom: 0.5em;
+  left: 0.5em;
+  background-color: black;
+  text-align: center;
+  padding: 0.2em; }
+
+/* line 86, C:/Users/Mauro/Documents/GitHub/Clima2/css/estilos.scss */
+.card__image {
+  display: block; }
+
+/* line 89, C:/Users/Mauro/Documents/GitHub/Clima2/css/estilos.scss */
+.card__temp {
+  font-size: 2rem;
+  display: block;
+  line-height: 1; }
+
+/* line 94, C:/Users/Mauro/Documents/GitHub/Clima2/css/estilos.scss */
+.card__temp::after {
+  content: "°C"; }
+
+/* line 97, C:/Users/Mauro/Documents/GitHub/Clima2/css/estilos.scss */
+.card__maxt::after {
+  content: "°C";
+  color: #11D30E; }
+
+/* line 101, C:/Users/Mauro/Documents/GitHub/Clima2/css/estilos.scss */
+.card__maxt::before {
+  content: "Max: ";
+  color: #11D30E; }
+
+/* line 105, C:/Users/Mauro/Documents/GitHub/Clima2/css/estilos.scss */
+.card__mint::after {
+  content: "°C";
+  color: red; }
+
+/* line 109, C:/Users/Mauro/Documents/GitHub/Clima2/css/estilos.scss */
+.card__mint::before {
+  content: "Min: ";
+  color: red; }
+
+/* line 114, C:/Users/Mauro/Documents/GitHub/Clima2/css/estilos.scss */
+.card:nth-child(2n+1) {
+  background-color: #00A1E5; }

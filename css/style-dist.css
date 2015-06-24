@@ -1,0 +1,77 @@
+html {
+	font-family: 'Sourse Sans Pro', sans-serif;
+}
+@media all and (max-width: 400px) {
+	html {
+		font-size: 80%;
+	}
+} 
+
+body {
+	padding: 0;
+	margin: 0;
+}
+.main-header {
+	text-align: center;
+	background-color: #D43A00;
+	color: white;
+	padding: 4em;
+}
+	.main-header h1 {
+		margin: 0;
+	}
+
+	.main-header h2 {
+		font-size: 1rem;
+		font-weight: normal;
+	}
+	.card {
+		position: relative;
+		height: 30vh;
+		width:100%;
+		width: 100vw;
+		background-size:cover;
+		color: white;
+		padding: .4em;
+	}
+	@media all and (min-width: 28em) {
+		.card {
+			background-image: url(img/valencia.jpg);
+			background-position: center;
+		}
+	}
+	.card__header {
+		text-align: center;
+	}
+	.card__title {
+		font-size: 2.5em;
+		margin: 0;
+	}
+	.card__date {
+		font-size: 1.2em;
+		margin: 0;
+	}
+	.card--valencia {
+		background-image: url(img/v.jpg);
+	}
+	.card__info {
+		position: absolute;
+		bottom:.4em;
+		left:.4em;
+		background-color: black;
+		text-align: center;
+	}
+	.card__image {
+		display:block;
+	}
+	.card__temp {
+		font-size: 3rem;
+		display: block;
+		line-height: 1;
+	}
+	.card__maxt::before {
+		content: "Max: ";
+	}
+	.card__mint::before {
+		content: "Min: ";
+	}

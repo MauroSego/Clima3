@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Visor Mundial de Clima</title>
+	<link rel="stylesheet" href="css/estilos.css">
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Raleway:400,300' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<header class="main-header">
+		<h1>Weather Visor</h1>
+		<h2>Look the weather all over the world</h2>
+	</header>
+	<div class="loader">Estamos buscando s
+	u posición, por favor espere...</div>
+	<main class="cards-group">
+		<template id="template--city">
+			<div class="card">
+				<header class="card__header">
+					<h3 data-city class="card__title"></h3>
+					<h4 data-time class="card__date"></h4>
+				</header>
+				<div class="card__info">
+					<img data-icon src="" alt="" class="card__image">
+					<span data-temp="max" class="card__maxt"></span>
+					<span data-temp="min" class="card__mint"></span>
+					<span data-temp="current" class="card__temp"></span>
+				</div>
+			</div>
+		</template>
+	</main>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="js/clima.js">
+	</script>
+</body>
+</html>
