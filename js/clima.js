@@ -1,4 +1,7 @@
 (function() {
+	var API_WORLDTIME_KEY = "faf33e815c7bbad913db71d2b44a5";
+	var API_WORLDTIME = "https://api.worldweatheronline.com/free/v2/weather.ashx?format=json&key=" + API_WORLDTIME_KEY + "&q=";
+	
 	var API_WEATHER_KEY = "07764994b5574b6a3c9c088c7b296272";
 	var API_WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather?APPID=" + API_WEATHER_KEY + "&";
 	var IMG_WEATHER = "http://openweathermap.org/img/w/"
@@ -13,6 +16,19 @@
 
 	var today = new Date();
 	var timeNow = today.toLocaleTimeString();
+
+	var $body = $("body");
+	var $loader = $(".loader");
+	var nombreNuevaCiudad = $("[data-input='cityAdd']");
+	var buttonAdd = $("[data-button='add']");
+
+	$ (buttonAdd).on("click", addNewCity);
+
+	$( nombreNuevaCiudad ).on("keypress", function(event){
+		if(event.which == 13){
+			addNewCity();
+		}
+	});
 
 	if(navigator.geolocation){
 		navigator.geolocation.getCurrentPosition(getCoords, errorFound);
@@ -48,8 +64,10 @@
 		cityWeather.temp_min = data.main.temp_min - 273.15;
 		cityWeather.main = data.weather[0].main;
 
+
+
 		//A partir de acá se renderiza el template
-		renderTemplate();
+		renderTemplate(cityWeather);
 
 	};
 
@@ -58,7 +76,7 @@
 		return document.importNode(t.content, true);
 	};
 
-	function renderTemplate() {
+	function renderTemplate(cityWeather) {
 		var clone = activateTemplate("#template--city");
 		//
 		clone.querySelector("[data-time]").innerHTML =timeNow;
@@ -68,8 +86,30 @@
 		clone.querySelector("[data-temp='max']").innerHTML = cityWeather.temp_max.toFixed(1);
 		clone.querySelector("[data-temp='min']").innerHTML = cityWeather.temp_min.toFixed(1);
 
-		$(".loader").hide();
-		$("body").append(clone);
+		$($loader).hide();
+		$( $body ).append(clone);
 	}
 
+	function addNewCity(e) {
+		event.preventDefault();
+		$.getJSON(API_WEATHER_URL + "q=" + $(nombreNuevaCiudad).val(), getWeatherNewCity);
+	}
+	function getWeatherNewCity(data){
+
+		$.getJSON(API_WORLDTIME + $(nombreNuevaCiudad).val(), function(response){
+
+			cityWeather = {};
+			cityWeather.zone = data.name;
+			cityWeather.icon = IMG_WEATHER + data.weather[0].icon+".png";
+			cityWeather.temp = data.main.temp - 273.15;
+			cityWeather.temp_max = data.main.temp_max - 273.15;
+			cityWeather.temp_min = data.main.temp_min - 273.15;
+
+			console.log(response);
+			console.log(response.data.current_condition[0].observation_time);
+
+			//renderTemplate(cityWeather, response);
+		} );
+
+	}
 })();
