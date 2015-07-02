@@ -58,8 +58,7 @@ body {
 	.card {
 		position: relative;
 		height: 160px;
-		width: 100vh;
-		margin: 0.2em 0.5em;
+		width: 100%;
 		background-size:cover;
 		color: white;
 		padding: $gutter;
@@ -114,10 +113,10 @@ body {
 		line-height: 1;
 	}
 	.card__temp::after {
-		content: "°C"
+		content: "°c"
 	}
 	.card__maxt::after {
-		content: "°C";
+		content: "°c";
 		color: #11D30E;
 	}
 	.card__maxt::before {
@@ -125,7 +124,7 @@ body {
 		color: #11D30E;
 	}
 	.card__mint::after {
-		content: "°C";
+		content: "°c";
 		color: red;
 	}
 	.card__mint::before {
